@@ -29,30 +29,8 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full pt-20 md:pt-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full pt-20 md:pt-0 lg:pt-20">
         <div className="max-w-4xl">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="
-              hidden md:inline-flex
-              items-center
-              gap-2
-              px-4
-              py-2
-              rounded-full
-              border
-              border-red-500
-              bg-red-500/10
-              text-red-400
-              mb-6
-            "
-          >
-            <FaTrophy />
-            National Powerlifter
-          </motion.div>
 
           {/* Heading */}
           <motion.h1
