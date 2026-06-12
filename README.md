@@ -22,5 +22,5 @@ A responsive athlete portfolio website built with React, Tailwind CSS, Framer Mo
 
 ## Run Locally
 
-npm install
-npm run dev
+- npm install
+- npm run dev
