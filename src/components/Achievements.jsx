@@ -29,7 +29,7 @@ const achievements = [
     bg: "bg-blue-400/5",
   },
   {
-    title: "All Indian National Championship Participant",
+    title: "All Indian National Championship Medalist",
     icon: <FaMedal />,
     color: "text-green-400",
     border: "border-green-400/20",
@@ -138,8 +138,8 @@ const Achievements = () => {
               </h3>
 
               <p className="text-zinc-400 mt-3">
-                Recognized for excellence and competitive
-                performance in powerlifting competitions.
+                Won 1 Gold Medal and 2 Silver Medals
+                at the All Indian National Championship.
               </p>
             </motion.div>
           ))}
