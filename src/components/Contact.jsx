@@ -16,16 +16,16 @@ const contactData = [
   },
   {
     title: "Email",
-    value: "athlete@email.com",
+    value: "prashantsinghrajput525@gmail.com",
     icon: <FaEnvelope />,
-    link: "mailto:athlete@email.com",
+    link: "mailto:prashantsinghrajput525@gmail.com",
     color: "text-red-500",
   },
   {
     title: "Phone",
-    value: "+91 98765 43210",
+    value: "+91 79082 45330",
     icon: <FaPhoneAlt />,
-    link: "tel:+919876543210",
+    link: "tel:+917908245330",
     color: "text-green-500",
   },
 ];
@@ -154,13 +154,11 @@ const Contact = () => {
           className="mt-16 text-center"
         >
           <h3 className="text-3xl font-bold text-white">
-            Strength Is Built Every Day
+            Sports Nutrition & Performance
           </h3>
 
           <p className="text-zinc-400 mt-4 max-w-2xl mx-auto">
-            Follow the journey, celebrate achievements,
-            and stay connected with the latest updates
-            from competitions and training sessions.
+            Passionate about strength development, sports nutrition, recovery protocols, and evidence-based performance improvement techniques..
           </p>
         </motion.div>
       </div>

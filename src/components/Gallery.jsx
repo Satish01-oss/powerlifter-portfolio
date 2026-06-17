@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
-import gallery1 from "../assets/images/gallery/gallery1.jpg";
-import gallery2 from "../assets/images/gallery/gallery2.jpg";
-import gallery3 from "../assets/images/gallery/gallery3.jpg";
-import gallery4 from "../assets/images/gallery/gallery4.jpg";
-import gallery5 from "../assets/images/gallery/gallery5.jpg";
-import gallery6 from "../assets/images/gallery/gallery6.jpg";
+import gallery1 from "../assets/images/gallery/gallery1.jpeg";
+import gallery2 from "../assets/images/gallery/gallery2.jpeg";
+import gallery3 from "../assets/images/gallery/gallery3.jpeg";
+import gallery4 from "../assets/images/gallery/gallery4.jpeg";
+import gallery5 from "../assets/images/gallery/gallery5.png";
+import gallery6 from "../assets/images/gallery/gallery6.png";
 
 const galleryImages = [
   {

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FaInstagram, FaTrophy } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import heroImage from "../assets/images/hero.jpg";
+import heroImage from "../assets/images/hero.jpeg";
 
 const Hero = () => {
   return (
@@ -152,7 +152,7 @@ const Hero = () => {
           >
             <div className="bg-white/5 backdrop-blur-md border border-zinc-800 rounded-2xl p-5">
               <h3 className="text-3xl font-bold text-red-500">
-                10+
+                7+
               </h3>
               <p className="text-zinc-400 mt-1">
                 Competitions
@@ -161,7 +161,7 @@ const Hero = () => {
 
             <div className="bg-white/5 backdrop-blur-md border border-zinc-800 rounded-2xl p-5">
               <h3 className="text-3xl font-bold text-yellow-400">
-                8
+                2
               </h3>
               <p className="text-zinc-400 mt-1">
                 Gold Medals
@@ -170,7 +170,7 @@ const Hero = () => {
 
             <div className="bg-white/5 backdrop-blur-md border border-zinc-800 rounded-2xl p-5">
               <h3 className="text-3xl font-bold text-zinc-300">
-                4
+                5
               </h3>
               <p className="text-zinc-400 mt-1">
                 Silver Medals
@@ -179,7 +179,7 @@ const Hero = () => {
 
             <div className="bg-white/5 backdrop-blur-md border border-zinc-800 rounded-2xl p-5">
               <h3 className="text-3xl font-bold text-orange-500">
-                3
+                2
               </h3>
               <p className="text-zinc-400 mt-1">
                 Bronze Medals

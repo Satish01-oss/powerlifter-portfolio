@@ -91,7 +91,7 @@ const Footer = () => {
               <li>🏆 Jharkhand State Champion</li>
               <li>🏆 Powerlifting India Champion</li>
               <li>🥇 Jharkhand Gold Medals</li>
-              <li>🥈 National Medalist</li>
+              <li>🥇 National Medalist</li>
               <li>🏋️ Competitive Powerlifter</li>
             </ul>
           </div>
@@ -104,19 +104,19 @@ const Footer = () => {
 
             <div className="space-y-4">
               <a
-                href="mailto:athlete@email.com"
+                href="mailto:prashantsinghrajput525@gmail.com"
                 className="flex items-center gap-3 hover:text-red-500 transition"
               >
                 <FaEnvelope />
-                athlete@email.com
+                prashantsinghrajput525@gmail.com
               </a>
 
               <a
-                href="tel:+919999999999"
+                href="tel:+917908245330"
                 className="flex items-center gap-3 hover:text-red-500 transition"
               >
                 <FaPhoneAlt />
-                +91 99999 99999
+                +917908245330
               </a>
             </div>
 
@@ -144,7 +144,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-zinc-800 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
           <p>
-            © {currentYear} Insta Portfolio. All Rights Reserved.
+            © {currentYear} Powerlifer Portfolio. All Rights Reserved.
           </p>
 
           <p>

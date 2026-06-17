@@ -6,7 +6,7 @@ import {
   FaTrophy,
 } from "react-icons/fa";
 
-import athleteImage from "../assets/images/athlete.jpg";
+import athleteImage from "../assets/images/athlete.jpeg";
 
 const athleteInfo = [
   {
@@ -22,12 +22,12 @@ const athleteInfo = [
   {
     icon: <FaTrophy />,
     title: "Competitions",
-    value: "15+",
+    value: "7+",
   },
   {
     icon: <FaMedal />,
     title: "Medals",
-    value: "20+",
+    value: "9+",
   },
 ];
 
@@ -85,7 +85,7 @@ const About = () => {
             </span>
 
             <h3 className="text-4xl font-bold text-white mt-3">
-              Athlete Name
+              Prashant Singh
             </h3>
 
             <p className="text-zinc-400 mt-5 leading-relaxed">
@@ -97,19 +97,19 @@ const About = () => {
             {/* Achievement Badges */}
             <div className="flex flex-wrap gap-3 mt-8">
               <span className="px-4 py-2 bg-red-500/10 border border-red-500/30 text-red-400 rounded-full text-sm">
-                State Champion
+                Powerlifting sports organisation (PSO)
               </span>
 
               <span className="px-4 py-2 bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 rounded-full text-sm">
-                Gold Medalist
+                Jharkhand state powerlifting organisation (JSPO)
               </span>
 
               <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-full text-sm">
-                National Athlete
+                Chattisgarh state powerlifting association (CSPA)
               </span>
 
               <span className="px-4 py-2 bg-green-500/10 border border-green-500/30 text-green-400 rounded-full text-sm">
-                Active Competitor
+                66KG / JNR
               </span>
             </div>
 
@@ -142,7 +142,7 @@ const About = () => {
               </h4>
 
               <p className="text-zinc-400">
-                Currently participating in national-level powerlifting events
+                Currently preparing for Powerlifting Federation Cup 2026
                 and preparing for upcoming championships.
               </p>
             </div>

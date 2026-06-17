@@ -13,20 +13,23 @@ const achievements = [
     color: "text-yellow-400",
     border: "border-yellow-400/20",
     bg: "bg-yellow-400/5",
+    description: "Secured the title of West Bengal State Champion in 2026, demonstrating exceptional performance and dedication to powerlifting at the state level.",
   },
   {
-    title: "Powerlifting India Champion",
+    title: "India Powerlifting Champion",
     icon: <FaAward />,
     color: "text-red-500",
     border: "border-red-500/20",
     bg: "bg-red-500/5",
+    description: "Won the prestigious India Powerlifting Championship in 2026, showcasing exceptional strength and dedication to the sport.",
   },
   {
-    title: "National Powerlifting Athlete",
+    title: "National-level Powerlifter",
     icon: <FaStar />,
     color: "text-blue-400",
     border: "border-blue-400/20",
     bg: "bg-blue-400/5",
+      description: "Consistently ranked among the top powerlifters in national competitions, demonstrating a commitment to excellence and continuous improvement.",
   },
   {
     title: "All Indian National Championship Medalist",
@@ -34,27 +37,28 @@ const achievements = [
     color: "text-green-400",
     border: "border-green-400/20",
     bg: "bg-green-400/5",
+    description: "Achieved multiple medals at the All Indian National Championship, including 1 Gold Medal and 2 Silver Medals, highlighting competitive success on a national stage.",
   },
 ];
 
 const medals = [
   {
     title: "Gold Medals",
-    count: "08",
+    count: "02",
     color: "text-yellow-400",
     bg: "bg-yellow-400/5",
     border: "border-yellow-400/20",
   },
   {
     title: "Silver Medals",
-    count: "04",
+    count: "05",
     color: "text-zinc-300",
     bg: "bg-zinc-300/5",
     border: "border-zinc-300/20",
   },
   {
     title: "Bronze Medals",
-    count: "03",
+    count: "02",
     color: "text-orange-500",
     bg: "bg-orange-500/5",
     border: "border-orange-500/20",
@@ -138,8 +142,7 @@ const Achievements = () => {
               </h3>
 
               <p className="text-zinc-400 mt-3">
-                Won 1 Gold Medal and 2 Silver Medals
-                at the All Indian National Championship.
+                {item.description}
               </p>
             </motion.div>
           ))}
