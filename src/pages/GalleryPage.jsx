@@ -1,10 +1,14 @@
 import Gallery from "../components/Gallery";
+import PageTransition from "../components/fx/PageTransition";
+import usePageTitle from "../hooks/usePageTitle";
 
 const GalleryPage = () => {
+  usePageTitle("Gallery");
+
   return (
-    <main className="pt-24 bg-black min-h-screen">
-      <Gallery />
-    </main>
+    <PageTransition className="pt-20 bg-black min-h-screen">
+      <Gallery headingLevel="h1" />
+    </PageTransition>
   );
 };
 

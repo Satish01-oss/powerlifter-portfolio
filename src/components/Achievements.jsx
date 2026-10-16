@@ -1,169 +1,170 @@
 import { motion } from "framer-motion";
-import {
-  FaMedal,
-  FaTrophy,
-  FaAward,
-  FaStar,
-} from "react-icons/fa";
+import { FaMedal, FaTrophy, FaAward, FaGlobeAsia, FaCrown } from "react-icons/fa";
 
-const achievements = [
-  {
-    title: "West Bengal State Champion",
-    icon: <FaTrophy />,
-    color: "text-yellow-400",
-    border: "border-yellow-400/20",
-    bg: "bg-yellow-400/5",
-    description: "Secured the title of West Bengal State Champion in 2026, demonstrating exceptional performance and dedication to powerlifting at the state level.",
-  },
-  {
-    title: "India Powerlifting Champion",
-    icon: <FaAward />,
-    color: "text-red-500",
-    border: "border-red-500/20",
-    bg: "bg-red-500/5",
-    description: "Won the prestigious India Powerlifting Championship in 2026, showcasing exceptional strength and dedication to the sport.",
-  },
-  {
-    title: "National-level Powerlifter",
-    icon: <FaStar />,
-    color: "text-blue-400",
-    border: "border-blue-400/20",
-    bg: "bg-blue-400/5",
-      description: "Consistently ranked among the top powerlifters in national competitions, demonstrating a commitment to excellence and continuous improvement.",
-  },
-  {
-    title: "All Indian National Championship Medalist",
-    icon: <FaMedal />,
-    color: "text-green-400",
-    border: "border-green-400/20",
-    bg: "bg-green-400/5",
-    description: "Achieved multiple medals at the All Indian National Championship, including 1 Gold Medal and 2 Silver Medals, highlighting competitive success on a national stage.",
-  },
-];
+import athleteData from "../data/athleteData";
+import SectionHeading from "./SectionHeading";
+import InteractiveCard from "./fx/InteractiveCard";
+import CountUp from "./fx/CountUp";
+
+const tones = {
+  gold: { icon: FaTrophy, color: "text-yellow-400", card: "border-yellow-400/20 bg-yellow-400/5", spot: "spot-gold" },
+  red: { icon: FaAward, color: "text-red-500", card: "border-red-500/20 bg-red-500/5", spot: "" },
+  blue: { icon: FaGlobeAsia, color: "text-blue-400", card: "border-blue-400/20 bg-blue-400/5", spot: "spot-blue" },
+  green: { icon: FaMedal, color: "text-green-400", card: "border-green-400/20 bg-green-400/5", spot: "spot-green" },
+  orange: { icon: FaCrown, color: "text-orange-400", card: "border-orange-400/20 bg-orange-400/5", spot: "spot-orange" },
+};
+
+const featured = athleteData.achievements.filter((item) => item.featured);
+const regular = athleteData.achievements.filter((item) => !item.featured);
 
 const medals = [
-  {
-    title: "Gold Medals",
-    count: "02",
-    color: "text-yellow-400",
-    bg: "bg-yellow-400/5",
-    border: "border-yellow-400/20",
-  },
-  {
-    title: "Silver Medals",
-    count: "05",
-    color: "text-zinc-300",
-    bg: "bg-zinc-300/5",
-    border: "border-zinc-300/20",
-  },
-  {
-    title: "Bronze Medals",
-    count: "02",
-    color: "text-orange-500",
-    bg: "bg-orange-500/5",
-    border: "border-orange-500/20",
-  },
+  { title: "Gold Medals", count: athleteData.medals.gold, color: "text-yellow-400", card: "bg-yellow-400/5 border-yellow-400/20", spot: "spot-gold" },
+  { title: "Silver Medals", count: athleteData.medals.silver, color: "text-zinc-300", card: "bg-zinc-300/5 border-zinc-300/20", spot: "" },
+  { title: "Bronze Medals", count: athleteData.medals.bronze, color: "text-orange-500", card: "bg-orange-500/5 border-orange-500/20", spot: "spot-orange" },
 ];
 
-const Achievements = () => {
+const ease = [0.16, 1, 0.3, 1];
+
+const Achievements = ({ headingLevel }) => {
   return (
     <section className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <span className="uppercase tracking-widest text-red-500 font-semibold">
-            Achievements
-          </span>
-
-          <h2 className="text-4xl md:text-5xl font-bold text-white mt-3">
-            Medals & Championships
-          </h2>
-
-          <p className="text-zinc-400 mt-4 max-w-2xl mx-auto">
-            Years of dedication, discipline and hard work reflected
-            through state and national-level achievements.
-          </p>
-        </motion.div>
+        <SectionHeading
+          as={headingLevel}
+          eyebrow="Achievements"
+          title="Medals & Championships"
+          description="Years of dedication, discipline and hard work reflected through state, national and international achievements."
+        />
 
         {/* Medal Stats */}
-        <div className="grid md:grid-cols-3 gap-6 mt-16">
+        <dl className="grid grid-cols-3 gap-3 sm:gap-6">
           {medals.map((medal, index) => (
-            <motion.div
+            <InteractiveCard
               key={medal.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15 }}
+              initial={{ opacity: 0, y: 40, scale: 0.92 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: index * 0.15, duration: 0.8, ease }}
               viewport={{ once: true }}
-              className={`${medal.bg} ${medal.border}
-              border rounded-3xl p-8 text-center`}
+              className={`${medal.card} ${medal.spot} group flex flex-col-reverse items-center border rounded-3xl p-5 sm:p-8 text-center`}
             >
-              <h3
-                className={`text-6xl font-black ${medal.color}`}
-              >
-                {medal.count}
-              </h3>
-
-              <p className="text-zinc-300 mt-3 text-lg">
-                {medal.title}
-              </p>
-            </motion.div>
+              <dt className="text-zinc-300 mt-2 text-sm sm:text-lg">{medal.title}</dt>
+              <dd className={`font-display text-6xl sm:text-8xl leading-none ${medal.color}`}>
+                <span className="text-shine">
+                  <CountUp value={medal.count} pad={2} delay={0.2 + index * 0.15} />
+                </span>
+              </dd>
+              <FaMedal
+                className={`text-2xl sm:text-3xl mb-3 ${medal.color} transition-transform duration-500 group-hover:rotate-[360deg]`}
+                aria-hidden="true"
+              />
+            </InteractiveCard>
           ))}
-        </div>
+        </dl>
+
+        {/* Featured title(s): full-width trophy card */}
+        {featured.map((item) => (
+          <InteractiveCard
+            as="article"
+            key={item.title}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease }}
+            viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+            className="spot-gold group relative overflow-hidden mt-16 rounded-3xl border border-yellow-400/40 bg-linear-to-br from-yellow-500/15 via-yellow-900/5 to-black p-8 md:p-12"
+          >
+            {/* Slow light sweep across the card */}
+            <motion.div
+              aria-hidden="true"
+              animate={{ x: ["-150%", "250%"] }}
+              transition={{ duration: 3.5, repeat: Infinity, repeatDelay: 2.5, ease: "easeInOut" }}
+              className="absolute inset-y-0 w-1/3 -skew-x-12 bg-linear-to-r from-transparent via-yellow-200/10 to-transparent"
+            />
+
+            <div className="relative flex flex-col md:flex-row md:items-center gap-8">
+              <motion.div
+                initial={{ scale: 0, rotate: -30 }}
+                whileInView={{ scale: 1, rotate: 0 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 200, damping: 12, delay: 0.3 }}
+                className="shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-full bg-linear-to-br from-yellow-300 to-yellow-600 flex items-center justify-center text-black text-5xl md:text-6xl shadow-2xl shadow-yellow-500/30"
+              >
+                <FaTrophy aria-hidden="true" />
+              </motion.div>
+
+              <div>
+                <span className="text-yellow-400 uppercase tracking-[0.3em] text-xs font-semibold">
+                  Biggest Title
+                </span>
+                <h3 className="font-display text-5xl md:text-7xl tracking-wide leading-none mt-2 text-yellow-400">
+                  <span className="text-shine">{item.title}</span>
+                </h3>
+                <p className="text-zinc-300 mt-4 max-w-2xl leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          </InteractiveCard>
+        ))}
 
         {/* Achievement Cards */}
-        <div className="grid md:grid-cols-2 gap-6 mt-16">
-          {achievements.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15 }}
-              viewport={{ once: true }}
-              whileHover={{
-                y: -8,
-              }}
-              className={`${item.bg} ${item.border}
-              border rounded-3xl p-8
-              transition-all duration-300`}
-            >
-              <div
-                className={`text-4xl mb-5 ${item.color}`}
+        <div className="grid md:grid-cols-2 gap-6 mt-6">
+          {regular.map((item, index) => {
+            const tone = tones[item.tone] ?? tones.red;
+
+            return (
+              <InteractiveCard
+                as="article"
+                key={item.title}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: (index % 2) * 0.15, duration: 0.8, ease }}
+                viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+                whileHover={{ y: -8 }}
+                className={`${tone.card} ${tone.spot} group relative overflow-hidden border rounded-3xl p-8`}
               >
-                {item.icon}
-              </div>
+                {/* Big outlined index number */}
+                <span
+                  aria-hidden="true"
+                  className="absolute -top-4 right-4 font-display text-[7rem] leading-none text-outline transition-transform duration-500 group-hover:-translate-y-2"
+                >
+                  {String(featured.length + index + 1).padStart(2, "0")}
+                </span>
 
-              <h3 className="text-white text-2xl font-bold">
-                {item.title}
-              </h3>
+                <tone.icon
+                  className={`relative text-4xl mb-5 ${tone.color} transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6`}
+                  aria-hidden="true"
+                />
 
-              <p className="text-zinc-400 mt-3">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
+                <h3 className="relative text-white text-2xl font-bold">{item.title}</h3>
+
+                <p className="relative text-zinc-400 mt-3 leading-relaxed">{item.description}</p>
+              </InteractiveCard>
+            );
+          })}
         </div>
 
-        {/* Achievement Banner */}
+        {/* Achievement Banner with a light sweep */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-16 rounded-3xl border border-zinc-800
-          bg-gradient-to-r from-red-950/30 to-black p-8 text-center"
+          transition={{ duration: 0.8, ease }}
+          className="relative overflow-hidden mt-16 rounded-3xl border border-zinc-800 bg-linear-to-r from-red-950/50 to-black p-8 md:p-12 text-center"
         >
-          <h3 className="text-3xl font-bold text-white">
+          <motion.div
+            aria-hidden="true"
+            initial={{ x: "-120%" }}
+            whileInView={{ x: "120%" }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.6, delay: 0.4, ease: "easeInOut" }}
+            className="absolute inset-y-0 w-1/3 -skew-x-12 bg-linear-to-r from-transparent via-white/10 to-transparent"
+          />
+
+          <h3 className="relative font-display text-4xl md:text-5xl tracking-wide text-white">
             Representing Strength & Discipline
           </h3>
 
-          <p className="text-zinc-400 mt-3 max-w-2xl mx-auto">
-            Continuously competing at state and national
-            championships while inspiring future athletes
-            through dedication and hard work.
+          <p className="relative text-zinc-400 mt-3 max-w-2xl mx-auto">
+            Competing at state, national and international level while
+            inspiring future athletes through dedication and hard work.
           </p>
         </motion.div>
       </div>
